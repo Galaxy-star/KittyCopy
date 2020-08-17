@@ -24,6 +24,21 @@ const router = new Router({
           path: '/menu',
           name: '菜单管理',
           component: resolve => require(['@/package/Menu'], resolve)
+        },
+        {
+          path: '/dept',
+          name: '机构管理',
+          component: resolve => require(['@/package/SysMng/Dept'], resolve)
+        },
+        {
+          path: '/role',
+          name: '角色管理',
+          component: resolve => require(['@/package/SysMng/Role'], resolve)
+        },
+        {
+          path: '/log',
+          name: '日志管理',
+          component: resolve => require(['@/package/SysMng/Log'], resolve)
         }
       ]
     },
@@ -35,7 +50,7 @@ const router = new Router({
     {
       path: '/404',
       name: 'error',
-      component: resolve => require(['@/package/NotFound'], resolve)
+      component: resolve => require(['@/package/404'], resolve)
     }
   ]
 })

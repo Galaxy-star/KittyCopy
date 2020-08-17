@@ -18,7 +18,7 @@
 
 <script>
 import Cookies from 'js-cookie'
-
+import mock from '@/mock/index'
 export default {
     name: 'Login',
     data() {
@@ -43,10 +43,10 @@ export default {
     },
     methods: {
         login() {
-            this.logining = true
+            // this.logining = true
             let userInfo = {username:this.loginForm.username, password:this.loginForm.password}
-            this.$api.login(userInfo).then(res => {
-                Cookies.set('token', res.data.data.token) 
+            this.$api.login(JSON.stringify(userInfo)).then(res => {
+                Cookies.set('token', res.data.token) 
                 sessionStorage.setItem('user', userInfo.username) 
                 this.$router.push('/')
             }).catch(err =>{
