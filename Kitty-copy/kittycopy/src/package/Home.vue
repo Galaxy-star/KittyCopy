@@ -12,9 +12,9 @@ import MenuBar from "./MenuBar/MenuBar"
 import Main from "./Main/Main"
 export default {
   components:{
-        HeadBar,
-        MenuBar,
-        Main
+      HeadBar,
+      MenuBar,
+      Main
   }
 };
 </script>

@@ -1,4 +1,4 @@
-import apis from './interface'
+import api from './api'
 
 const install = Vue => {
     if(install.installed) {
@@ -8,7 +8,7 @@ const install = Vue => {
     Object.defineProperties(Vue.prototype, {
         $api: {
             get() {
-                return apis
+                return api
             }
         }
     })

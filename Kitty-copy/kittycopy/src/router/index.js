@@ -55,21 +55,21 @@ const router = new Router({
   ]
 })
 
-// router.beforeEach((to, from, next) => {
-//   let user = sessionStorage.getItem('user')
-//   if(to.path == '/login') {
-//     if(user) {
-//       next({ path: '/' })
-//     }else {
-//       next()
-//     }
-//   }else {
-//     if(!user) {
-//       next({ path: '/login' })
-//     }else {
-//       next()
-//     }
-//   }
-// })
+router.beforeEach((to, from, next) => {
+  let user = sessionStorage.getItem('user')
+  if(to.path == '/login') {
+    if(user) {
+      next({ path: '/' })
+    }else {
+      next()
+    }
+  }else {
+    if(!user) {
+      next({ path: '/login' })
+    }else {
+      next()
+    }
+  }
+})
 
 export default router
